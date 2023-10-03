@@ -1,0 +1,35 @@
+# Frequently Asked Questions
+
+export function FAQBox({ title, children }) {
+  return (
+    <details>
+      <summary>
+        <div>{title}</div>
+      </summary>
+      <div>{children}</div>
+    </details>
+  );
+}
+
+## General
+
+<FAQBox title="How can I notify the team of a bug on OpenAPI?">
+  To report a bug, please visit our GitHub repository and [open a new
+  issue](https://github.com/data-gov-my/datagovmy-openapi/issues/new?title=Bug&labels=bugs).
+</FAQBox>
+<FAQBox title="How can I suggest improvements for the site?">
+  For improvement suggestions, visit our GitHub repository and [open a new
+  issue](https://github.com/data-gov-my/datagovmy-openapi/issues/new?title=Improvement&labels=improvement).
+</FAQBox>
+
+## Data & Tech
+
+<FAQBox title="Can I really use all the data here for free?">
+  This data is made open under the Creative Commons Attribution 4.0 International License (CC BY
+  4.0). You can use the data available on our platform for free as it's part of our commitment to
+  open data. We encourage users to explore, analyze, and utilize the data to drive innovation and
+  insights.
+</FAQBox>
+<FAQBox title="Could you share how this site was built?">
+  [Seeing is better than sharing.](https://github.com/data-gov-my/datagovmy-front)
+</FAQBox>

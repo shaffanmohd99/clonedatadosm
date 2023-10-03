@@ -1,0 +1,20 @@
+## Had Kadar Penggunaan
+
+Untuk memastikan penggunaan yang adil dan prestasi yang konsisten, kami melaksanakan had kadar penggunaan pada bilangan permintaan yang boleh dibuat dalam suatu tempoh masa. Ia bagi memastikan peluang penggunaan API kepada semua pengguna dan mengelakkan sebarang isu prestasi.
+
+Jika had penggunaan anda melebihi yang ditetapkan, permintaan berikutnya akan gagal, dan ralat `429 Terlalu Banyak Permintaan` akan dihantar dalam respons anda.
+
+Jadual berikut menghuraikan had kadar penggunaan untuk API yang disediakan:
+
+| API           | Had Kadar tanpa Token     | Had Kadar dengan Token     |
+| ------------- | ------------------------- | -------------------------- |
+| Katalog Data  | 4 permintaan setiap minit | 10 permintaan setiap minit |
+| OpenDOSM      | 4 permintaan setiap minit | 10 permintaan setiap minit |
+| Amaran Banjir | 4 permintaan setiap minit | 10 permintaan setiap minit |
+| Cuaca         | TBD                       | TBD                        |
+| GTFS Statik   | TBD                       | TBD                        |
+| GTFS Realiti  | TBD                       | TBD                        |
+
+<span className="text-sm italic">* API yang belum dikeluarkan lagi ditandai dengan TBD.</span>
+
+Sila ambil perhatian bahawa had kadar penggunaan adalah berbeza bagi pengguna yang mempunyai token pengesahan. Jika anda menjangkakan penggunaan melebihi had kadar tanpa token, kami mencadangkan anda [meminta token API](/authentication).

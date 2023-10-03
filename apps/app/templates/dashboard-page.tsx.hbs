@@ -1,0 +1,42 @@
+import {{pascalCase dashboard_name}}Dashboard from "@dashboards/{{dashCase dashboard_category}}/{{dashCase dashboard_name}}";
+// import { get } from "datagovmy-ui/api"; 
+import { Metadata } from "datagovmy-ui/components";
+import { AnalyticsProvider } from "datagovmy-ui/contexts/analytics"
+import { withi18n } from "datagovmy-ui/decorators";
+import { useTranslation } from "datagovmy-ui/hooks";
+import { Page } from "datagovmy-ui/types";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
+
+
+const {{pascalCase dashboard_name}}: Page = ({ meta }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const { t } = useTranslation(["dashboard-{{dashCase dashboard_name}}", "common"]);
+
+  return (
+    <AnalyticsProvider meta={meta}>
+      <Metadata
+        title={t("dashboard-{{dashCase dashboard_name}}:header")}
+        description={t("dashboard-{{dashCase dashboard_name}}:description")}
+        keywords={""}
+      />
+      <{{pascalCase dashboard_name}}Dashboard />
+    </AnalyticsProvider>
+  );
+};
+// Disabled
+export const getStaticProps: GetStaticProps = withi18n("dashboard-{{dashCase dashboard_name}}", async () => {
+  //   const { data } = await get("/dashboard", { dashboard: "{{dashCase dashboard_name}}" });
+
+  return {
+    notFound: false,
+    props: {
+        meta: {
+            id: "dashboard-{{dashCase dashboard_name}}",
+            type: "dashboard",
+            category: "{{dashCase dashboard_category}}",
+            agency: "{{titleCase agency_name}}"
+        }
+    },
+  };
+});
+
+export default {{pascalCase dashboard_name}};

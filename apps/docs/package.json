@@ -1,0 +1,23 @@
+{
+  "name": "docs",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Malaysia's official open data portal.",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "postbuild": "next-sitemap",
+    "start": "next start"
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "@vercel/edge-config": "^0.2.1",
+    "axios": "^0.27.2",
+    "datagovmy-nextra": "*",
+    "next": "^13.4.3",
+    "nextra": "^2.6.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
